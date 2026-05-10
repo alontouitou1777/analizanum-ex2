@@ -16,12 +16,14 @@ def bisection_method(f, start_point, end_point, epsilon=0.0001):
 
     iterations = 0
     mid = (start_point + end_point) / 2
-
     while (end_point - start_point) / 2 > epsilon:
-        if f(start_point) * f(mid) < 0:
+        f_mid = f(mid)
+
+        if f(start_point) * f_mid < 0:
             end_point = mid
         else:
             start_point = mid
+
         mid = (start_point + end_point) / 2
         iterations += 1
 
